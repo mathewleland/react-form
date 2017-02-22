@@ -3,7 +3,7 @@ import { render } from 'react-dom';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
-class EntryForm extends React.Component {
+class Basics extends React.Component {
 
   constructor() {
     super();
