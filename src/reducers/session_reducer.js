@@ -15,27 +15,33 @@ const _nullUser = {
   errors: []
 };
 
-const SessionReducer = (state = _nullUser, action) => {
+const SessionReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
     case PROCESS_BASICS:
       hashHistory.push("/businfo");
-      return merge({}, action.basicsDetails);
+      const basicsDetails = action.basicsDetails;
+      return merge({}, state, {basicsDetails});
     case PROCESS_BUSINFO:
+      const busInfoDetails = action.busInfoDetails;
       hashHistory.push("/account");
-      return merge({}, action.basicsDetails);
+      return merge({}, state, {busInfoDetails});
     case PROCESS_ACCOUNT:
       hashHistory.push("/extended");
-      return merge({}, action.accountDetails);
+      const accountDetails = action.accountDetails;
+      return merge({}, state, {accountDetails});
     case PROCESS_EXTENDED:
       hashHistory.push("/confirm");
-      return merge({}, action.extendedDetails);
+      const extendedDetails = action.extendedDetails;
+      return merge({}, state, {extendedDetails});
     case PROCESS_CONFIRM:
       hashHistory.push("/success");
-      return merge({}, action.confirmDetails);
+      const confirmDetails = action.confirmDetails;
+      return merge({}, state, {confirmDetails});
     case PROCESS_SUCCESS:
-      return merge({}, action.successDetails);
+      const successDetails = action.successDetails;
+      return merge({}, state, {successDetails});
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
       return merge({}, _nullUser, { currentUser });

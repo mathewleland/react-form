@@ -35,8 +35,8 @@ class Basics extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const basicsData = this.state;
-    this.props.processBasics({basicsData}); // connected via basics_container (defined in actions)
+    const basicsDetails = this.state;
+    this.props.processBasics({basicsDetails}); // connected via basics_container (defined in actions)
   }
 
   render() {
