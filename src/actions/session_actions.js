@@ -1,9 +1,12 @@
 export const SIGNUP = "SIGNUP";
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
-export const PROCESS_ACCOUNT = "PROCESS_ACCOUNT";
 export const PROCESS_BASICS = "PROCESS_BASICS";
 export const PROCESS_BUSINFO = "PROCESS_BUSINFO";
+export const PROCESS_ACCOUNT = "PROCESS_ACCOUNT";
+export const PROCESS_EXTENDED = "PROCESS_EXTENDED";
+export const PROCESS_CONFIRM = "PROCESS_CONFIRM";
+export const PROCESS_SUCCESS = "PROCESS_SUCCESS";
 
 export const processBasics = basicsDetails => ({
   type: PROCESS_BASICS,
@@ -18,6 +21,20 @@ export const processBusInfo = busInfoDetails => ({
 export const processAccount = accountDetails => ({
   type: PROCESS_ACCOUNT,
   accountDetails
+});
+export const processExtended = extendedDetails => ({
+  type: PROCESS_EXTENDED,
+  extendedDetails
+});
+
+export const processConfirm = confirmDetails => ({
+  type: PROCESS_CONFIRM,
+  confirmDetails
+});
+
+export const processSuccess = successDetails => ({
+  type: PROCESS_SUCCESS,
+  successDetails
 });
 
 export const signup = user => ({
