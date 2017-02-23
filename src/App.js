@@ -26,7 +26,6 @@ let userData = {
   twitter: null,
   yelp: null,
   password: null
-
 };
 
 class App extends React.Component {
@@ -59,13 +58,13 @@ class App extends React.Component {
   nextStep() {
     this.setState({
       step: this.state.step + 1
-    })
+    });
   }
 
   prevStep() {
     this.setState({
       step: this.state.step - 1
-    })
+    });
   }
 
   submitRegistration(event) {
@@ -108,10 +107,8 @@ class App extends React.Component {
   // }
 
   render() {
-    console.log(this.props); // for testing
     return(
       <div>
-        <h1>app component</h1>
         {this.props.children}
       </div>
     );
