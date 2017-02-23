@@ -4,7 +4,7 @@ import Confirm from './Confirm';
 
 const mapStateToProps = ({session}) => {
   return {
-    extendedDetails: session.extendedDetails
+    session: session
   };
 };
 

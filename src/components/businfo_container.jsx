@@ -3,9 +3,8 @@ import { signup, processBusInfo } from '../actions/session_actions';
 import BusInfo from './BusInfo';
 
 const mapStateToProps = ({session}) => {
-  console.log(session);
   return {
-    basicsData: session.basicsData
+    session: session
   };
 };
 

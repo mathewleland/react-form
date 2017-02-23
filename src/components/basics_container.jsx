@@ -3,7 +3,7 @@ import { signup, processBasics } from '../actions/session_actions';
 import Basics from './Basics';
 
 const mapStateToProps = ({ session }) => ({
-  errors: session.errors
+  session: session
 });
 
 const mapDispatchToProps = dispatch => {

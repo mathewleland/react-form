@@ -4,7 +4,7 @@ import Extended from './Extended';
 
 const mapStateToProps = ({session}) => {
   return {
-    accountData: session.accountData
+    session: session
   };
 };
 
