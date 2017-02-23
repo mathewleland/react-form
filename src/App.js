@@ -108,7 +108,7 @@ class App extends React.Component {
   // }
 
   render() {
-    console.log(this.props);
+    console.log(this.props); // for testing
     return(
       <div>
         <h1>app component</h1>
