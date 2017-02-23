@@ -46,15 +46,9 @@ class BusInfo extends React.Component {
 
     // <h1> {this.props.session.basicsData.firstName || 'Now'}, tell us how to contact {this.props.session.basicsData.businessName || "your business"} </h1>
   render() {
-    console.log(this.props.basicsData);
     return (
       <div className='container'>
         <br />
-
-          {this.props.session ?
-            <h1>name found</h1>
-            :
-            <h1>no name found</h1>}
 
           <form ref={(input) => this.questions = input}>
 

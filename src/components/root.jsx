@@ -10,8 +10,6 @@ import ConfirmContainer from './confirm_container';
 import SuccessContainer from './success_container';
 
 const Root = ({store}) => {
-  console.log("root entered"); // for testing
-
   return (
     <Provider store={store}>
       <Router history={hashHistory}>

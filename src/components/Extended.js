@@ -22,10 +22,10 @@ class Extended extends React.Component {
   }
 
 
+  // <h1> {this.props.userData.firstName}, could you tell us more about {this.props.userData.businessName || "your business"}?</h1>
   render() {
     return (
       <div className='container'>
-        <h1> {this.props.userData.firstName}, could you tell us more about {this.props.userData.businessName || "your business"}?</h1>
         <p> All fields are optional.  If you do not have a given page, feel free to skip it </p>
         <br />
 

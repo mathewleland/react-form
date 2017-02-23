@@ -4,6 +4,9 @@ import {
   PROCESS_BASICS,
   PROCESS_BUSINFO,
   PROCESS_ACCOUNT,
+  PROCESS_EXTENDED,
+  PROCESS_CONFIRM,
+  PROCESS_SUCCESS,
   RECEIVE_CURRENT_USER,
   RECEIVE_ERRORS } from '../actions/session_actions';
 
@@ -25,6 +28,14 @@ const SessionReducer = (state = _nullUser, action) => {
     case PROCESS_ACCOUNT:
       hashHistory.push("/extended");
       return merge({}, action.accountDetails);
+    case PROCESS_EXTENDED:
+      hashHistory.push("/confirm");
+      return merge({}, action.extendedDetails);
+    case PROCESS_CONFIRM:
+      hashHistory.push("/success");
+      return merge({}, action.confirmDetails);
+    case PROCESS_SUCCESS:
+      return merge({}, action.successDetails);
     case RECEIVE_CURRENT_USER:
       const currentUser = action.currentUser;
       return merge({}, _nullUser, { currentUser });

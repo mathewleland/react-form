@@ -8,70 +8,69 @@ import Extended from './components/Extended';
 import Confirm from './components/Confirm';
 import Success from './components/Success';
 
-
-let userData = {
-  name: null,
-  firstName: null,
-  lastName: null,
-  email: null,
-  businessName: null,
-  phone: null,
-  streetAddress: null,
-  city: "Folsom",
-  usState: "California",
-  zip: null,
-  website: null,
-  industry: null,
-  facebook: null,
-  twitter: null,
-  yelp: null,
-  password: null
-};
+// NOTE: DEFINED THIS INDIVIDUALLY IN EACH COMPONENTS STATE, THEN PASSED TO THE REDUX STOREA
+// let userData = {
+//   name: null,
+//   firstName: null,
+//   lastName: null,
+//   email: null,
+//   businessName: null,
+//   phone: null,
+//   streetAddress: null,
+//   city: "Folsom",
+//   usState: "California",
+//   zip: null,
+//   website: null,
+//   industry: null,
+//   facebook: null,
+//   twitter: null,
+//   yelp: null,
+//   password: null
+// };
 
 class App extends React.Component {
 
   constructor() {
     super();
 
-    this.saveValues = this.saveValues.bind(this);
-    this.nextStep = this.nextStep.bind(this);
-    this.prevStep = this.prevStep.bind(this);
-    this.submitRegistration = this.submitRegistration.bind(this);
-
-
-    this.state = {
-      step: 1
-    };
+    // this.saveValues = this.saveValues.bind(this);
+    // this.nextStep = this.nextStep.bind(this);
+    // this.prevStep = this.prevStep.bind(this);
+    // this.submitRegistration = this.submitRegistration.bind(this);
+    //
+    // this.state = {
+    //   step: 1
+    // };
 
   }
 
-  getinitialState() {
-    return {
-      step: 1
-    };
-  }
-
-  saveValues(data) {
-    userData = Object.assign({}, userData, data);
-  }
-
-  nextStep() {
-    this.setState({
-      step: this.state.step + 1
-    });
-  }
-
-  prevStep() {
-    this.setState({
-      step: this.state.step - 1
-    });
-  }
-
-  submitRegistration(event) {
-    event.preventDefault();
-    alert('registration action will be made here on back end');
-    this.nextStep();
-  }
+  // getinitialState() {
+  //   return {
+  //     step: 1
+  //   };
+  // }
+  //
+  // saveValues(data) {
+  //   userData = Object.assign({}, userData, data);
+  // }
+  //
+  // nextStep() {
+  //   this.setState({
+  //     step: this.state.step + 1
+  //   });
+  // }
+  //
+  // prevStep() {
+  //   this.setState({
+  //     step: this.state.step - 1
+  //   });
+  // }
+  //
+  // submitRegistration(event) {
+  //   event.preventDefault();
+  //   alert('registration action will be made here on back end');
+  //   this.nextStep();
+  // }
 
   // switch (this.state.step) {
   //   case 1:

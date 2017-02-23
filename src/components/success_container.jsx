@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { signup, processSuccess } from '../actions/session_actions';
-import Success from './confirm_container';
+import Success from './Success';
 
 const mapStateToProps = ({session}) => {
   return {

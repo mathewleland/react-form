@@ -9,8 +9,6 @@ import './index.css';
 import { render } from 'react-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
-  console.log("dom content loaded");
-
   let store;
   // Could check for current user, or past user here?
   store = configureStore();
@@ -20,5 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={store}/>, root);
 
   // NOTE: FOR TESTING, REMOVE FOR PRODUCTION
+  // in Chrome DevTools, call window.store.getState() to examine the store
   window.store = store;
 });
