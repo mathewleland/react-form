@@ -2,26 +2,26 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { Router, Route, IndexRoute, hashHistory } from 'react-router';
 import App from '../App';
-import Basics from './Basics';
-import BusInfo from './BusInfo';
-import Account from './Account';
-import Extended from './Extended';
-import Confirm from './Confirm';
-import Success from './Success';
+import BasicsContainer from './basics_container';
+import BusInfoContainer from './businfo_container';
+import AccountContainer from './account_container';
+import ExtendedContainer from './extended_container';
+import ConfirmContainer from './confirm_container';
+import SuccessContainer from './success_container';
 
 const Root = ({store}) => {
   console.log("root entered"); // for testing
-  
+
   return (
     <Provider store={store}>
       <Router history={hashHistory}>
         <Route path="/" component={App}>
-          <IndexRoute component={Basics} />
-            <Route path="/businfo" component={BusInfo}/>
-            <Route path="/account" component={Account}/>
-            <Route path="/extended" component={Extended}/>
-            <Route path="/confirm" component={Confirm}/>
-            <Route path="/success" component={Success}/>
+          <IndexRoute component={BasicsContainer} />
+            <Route path="/businfo" component={BusInfoContainer}/>
+            <Route path="/account" component={AccountContainer}/>
+            <Route path="/extended" component={ExtendedContainer}/>
+            <Route path="/confirm" component={ConfirmContainer}/>
+            <Route path="/success" component={SuccessContainer}/>
         </Route>
       </Router>
     </Provider>

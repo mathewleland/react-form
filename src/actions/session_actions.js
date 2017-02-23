@@ -3,10 +3,16 @@ export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const PROCESS_ACCOUNT = "PROCESS_ACCOUNT";
 export const PROCESS_BASICS = "PROCESS_BASICS";
+export const PROCESS_BUSINFO = "PROCESS_BUSINFO";
 
 export const processBasics = basicsDetails => ({
   type: PROCESS_BASICS,
   basicsDetails
+});
+
+export const processBusInfo = busInfoDetails => ({
+  type: PROCESS_BUSINFO,
+  busInfoDetails
 });
 
 export const processAccount = accountDetails => ({

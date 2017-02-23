@@ -14,6 +14,7 @@ class Basics extends React.Component {
     };
 
     // this.completeStep = this.completeStep.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   // completeStep(event) {
@@ -33,8 +34,8 @@ class Basics extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const data = this.state;
-    this.props.processBasics({data});
+    const basicsData = this.state;
+    this.props.processBasics({basicsData}); // connected via basics_container (defined in actions)
   }
 
   render() {
