@@ -5,7 +5,6 @@ export const PROCESS_BASICS = "PROCESS_BASICS";
 export const PROCESS_BUSINFO = "PROCESS_BUSINFO";
 export const PROCESS_ACCOUNT = "PROCESS_ACCOUNT";
 export const PROCESS_EXTENDED = "PROCESS_EXTENDED";
-export const PROCESS_CONFIRM = "PROCESS_CONFIRM";
 export const PROCESS_SUCCESS = "PROCESS_SUCCESS";
 
 export const processBasics = basicsDetails => ({
@@ -25,11 +24,6 @@ export const processAccount = accountDetails => ({
 export const processExtended = extendedDetails => ({
   type: PROCESS_EXTENDED,
   extendedDetails
-});
-
-export const processConfirm = confirmDetails => ({
-  type: PROCESS_CONFIRM,
-  confirmDetails
 });
 
 export const processSuccess = successDetails => ({

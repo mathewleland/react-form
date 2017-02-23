@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup, processConfirm } from '../actions/session_actions';
+import { signup } from '../actions/session_actions';
 import Confirm from './Confirm';
 
 const mapStateToProps = ({session}) => {
@@ -10,7 +10,7 @@ const mapStateToProps = ({session}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    processConfirm: confirmDetails => dispatch(processConfirm(confirmDetails))
+    signup: confirmDetails => dispatch(signup(confirmDetails))
   };
 };
 

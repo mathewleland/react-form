@@ -5,24 +5,37 @@ class Account extends React.Component {
 
   constructor() {
     super();
-    this.completeStep = this.completeStep.bind(this);
-  }
 
-  completeStep(event) {
-    event.preventDefault();
-
-    const data = {
+    this.state = {
       firstName: this.firstName.value,
       lastName: this.lastName.value,
       email: this.email.value,
       password: this.password.value
-
-    }
-
-    this.props.saveValues(data)
-    this.props.nextStep()
+    };
+    // this.completeStep = this.completeStep.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  // completeStep(event) {
+  //   event.preventDefault();
+  //
+  //   const data = {
+  //     firstName: this.firstName.value,
+  //     lastName: this.lastName.value,
+  //     email: this.email.value,
+  //     password: this.password.value
+  //
+  //   }
+  //
+  //   this.props.saveValues(data)
+  //   this.props.nextStep()
+  // }
+
+  handleSubmit(e) {
+    e.preventDefault();
+    const accountDetails = this.state;
+    this.props.processAccountDetails({accountDetails}); // connected via basics_container (defined in actions)
+  }
 
   render() {
     return (
@@ -34,35 +47,35 @@ class Account extends React.Component {
           <form ref={(input) => this.questions = input}>
 
             <div className="group">
-              <input type="text" ref={(input) => this.firstName = input} defaultValue={ this.props.userData.firstName } required />
+              <input type="text" ref={(input) => this.firstName = input} defaultValue={ this.state.firstName } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>First Name</label>
             </div>
 
             <div className="group">
-              <input type="text" ref={(input) => this.lastName = input} defaultValue={ this.props.userData.lastName } required />
+              <input type="text" ref={(input) => this.lastName = input} defaultValue={ this.state.lastName } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Last Name</label>
             </div>
 
             <div className="group">
-              <input type="text" ref={(input) => this.email = input} defaultValue={ this.props.userData.email }  required />
+              <input type="text" ref={(input) => this.email = input} defaultValue={ this.state.email }  required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Email</label>
             </div>
 
             <div className="group">
-              <input type="password" ref={(input) => this.password = input} defaultValue={ this.props.userData.password }  required />
+              <input type="password" ref={(input) => this.password = input} defaultValue={ this.state.password }  required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Password, min 8 characters</label>
             </div>
 
             <div className="group">
-              <input type="password" ref={(input) => this.password2 = input} defaultValue={ this.props.userData.password2 }  required />
+              <input type="password" ref={(input) => this.password2 = input} defaultValue={ this.state.password2 }  required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Retype password</label>

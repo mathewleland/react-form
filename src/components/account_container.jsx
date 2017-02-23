@@ -3,7 +3,7 @@ import { signup, processAccount } from '../actions/session_actions';
 import Account from './Account';
 
 const mapStateToProps = ({ session }) => ({
-  busInfo: session.busInfoDetails
+  accountDetails: session.accountDetails
 });
 
 const mapDispatchToProps = dispatch => {

@@ -37,11 +37,11 @@ class BusInfo extends React.Component {
   //   this.props.nextStep()
   // }
 
-    handleSubmit(e) {
-      e.preventDefault();
-      const busInfoData = this.state;
-      this.props.processBusInfo({busInfoData}); // connected via basics_container (defined in actions)
-    }
+  handleSubmit(e) {
+    e.preventDefault();
+    const busInfoData = this.state;
+    this.props.processBusInfo({busInfoData}); // connected via basics_container (defined in actions)
+  }
 
 
     // <h1> {this.props.session.basicsData.firstName || 'Now'}, tell us how to contact {this.props.session.basicsData.businessName || "your business"} </h1>
