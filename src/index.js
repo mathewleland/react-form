@@ -1,14 +1,14 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-// import { BrowserRouter, Match, Miss } from 'react-router';
+import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 import App from './App';
 import './index.css';
 import { render } from 'react-dom';
+import Root from './components/root';
 
-const Root = () => {
-  return (
-    <App />
-  )
-}
+document.addEventListener('DOMContentLoaded', () => {
+  console.log("dom content loaded");
+  const root = document.getElementById('root');
 
-render(<Root />, document.querySelector('#root'));
+  ReactDOM.render(<Root/>, root);
+});

@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-// import { Router, Route, Link, IndexRoute, hashHistory, browswerHistory } from 'react-router'
+import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 import Basics from './components/Basics';
 import BusInfo from './components/BusInfo';
 import Account from './components/Account';
@@ -49,11 +49,11 @@ class App extends React.Component {
   getinitialState() {
     return {
       step: 1
-    }
+    };
   }
 
   saveValues(data) {
-    userData = Object.assign({}, userData, data)
+    userData = Object.assign({}, userData, data);
   }
 
   nextStep() {
@@ -74,40 +74,50 @@ class App extends React.Component {
     this.nextStep();
   }
 
+  // switch (this.state.step) {
+  //   case 1:
+  //     return <Basics userData={userData}
+  //                    nextStep={this.nextStep}
+  //                    saveValues={this.saveValues} />
+  //   case 2:
+  //    return <BusInfo userData={userData}
+  //                   prevStep={this.prevStep}
+  //                   nextStep={this.nextStep}
+  //                   saveValues={this.saveValues} />
+  //   case 3:
+  //     return <Account userData={userData}
+  //                    prevStep={this.prevStep}
+  //                    nextStep={this.nextStep}
+  //                    saveValues={this.saveValues} />
+  //   case 4:
+  //     return <Extended userData={userData}
+  //                       prevStep={this.prevStep}
+  //                       nextStep={this.nextStep}
+  //                       saveValues={this.saveValues} />
+  //
+  //   case 5:
+  //     return <Confirm userData={userData}
+  //                     prevStep={this.prevStep}
+  //                     submitRegistration={this.submitRegistration} />
+  //
+  //   case 6:
+  //     return <Success userData={userData} />
+  //
+  //   default:
+  //     return (<div>Add a link here to go back to the first page, maybe reset state to 1</div>)
+  // }
+
   render() {
-      switch (this.state.step) {
-        case 1:
-          return <Basics userData={userData}
-                         nextStep={this.nextStep}
-                         saveValues={this.saveValues} />
-        case 2:
-         return <BusInfo userData={userData}
-                        prevStep={this.prevStep}
-                        nextStep={this.nextStep}
-                        saveValues={this.saveValues} />
-        case 3:
-          return <Account userData={userData}
-                         prevStep={this.prevStep}
-                         nextStep={this.nextStep}
-                         saveValues={this.saveValues} />
-        case 4:
-          return <Extended userData={userData}
-                            prevStep={this.prevStep}
-                            nextStep={this.nextStep}
-                            saveValues={this.saveValues} />
+    console.log(this.props);
+    return(
+      <div>
+        <h1>app component</h1>
+        {this.props.children}
+      </div>
+    );
 
-        case 5:
-          return <Confirm userData={userData}
-                          prevStep={this.prevStep}
-                          submitRegistration={this.submitRegistration} />
-
-        case 6:
-          return <Success userData={userData} />
-
-        default:
-          return (<div>Add a link here to go back to the first page, maybe reset state to 1</div>)
-      }
   }
 }
+
 
 export default App;
