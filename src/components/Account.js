@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 // import { render } from 'react-dom';
 
 class Account extends React.Component {
@@ -7,10 +8,10 @@ class Account extends React.Component {
     super();
 
     this.state = {
-      firstName: this.firstName.value,
-      lastName: this.lastName.value,
-      email: this.email.value,
-      password: this.password.value
+      firstName: "",
+      lastName: "",
+      email: "",
+      password: ""
     };
     // this.completeStep = this.completeStep.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);

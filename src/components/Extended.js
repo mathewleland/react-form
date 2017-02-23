@@ -1,10 +1,11 @@
 import React from 'react';
+import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 
 class Extended extends React.Component {
 
   constructor() {
     super();
-    this.completeStep = this.completeStep.bind(this);
+    // this.completeStep = this.completeStep.bind(this);
   }
 
   completeStep(event) {

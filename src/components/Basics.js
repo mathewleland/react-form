@@ -1,4 +1,5 @@
 import React from 'react';
+import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 
 class Basics extends React.Component {
 
