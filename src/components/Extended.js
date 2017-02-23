@@ -1,31 +1,43 @@
 import React from 'react';
+import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 
 class Extended extends React.Component {
-
   constructor() {
     super();
-    this.completeStep = this.completeStep.bind(this);
+
+    this.state = {
+      facebook: "",
+      twitter: "",
+      yelp: ""
+    };
+    // this.completeStep = this.completeStep.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  completeStep(event) {
-    event.preventDefault();
-
-    const data = {
-      facebook: this.facebook.value,
-      twitter: this.twitter.value,
-      yelp: this.yelp.value,
-
-    }
-
-    this.props.saveValues(data)
-    this.props.nextStep()
+  // completeStep(event) {
+  //   event.preventDefault();
+  //
+  //   const data = {
+  //     facebook: this.facebook.value,
+  //     twitter: this.twitter.value,
+  //     yelp: this.yelp.value,
+  //
+  //   }
+  //
+  //   this.props.saveValues(data)
+  //   this.props.nextStep()
+  // }
+  handleSubmit(e) {
+    e.preventDefault();
+    const extendedDetails = this.state;
+    this.props.processExtended({extendedDetails}); // connected via basics_container (defined in actions)
   }
 
 
+  // <h1> {this.props.userData.firstName}, could you tell us more about {this.props.userData.businessName || "your business"}?</h1>
   render() {
     return (
       <div className='container'>
-        <h1> {this.props.userData.firstName}, could you tell us more about {this.props.userData.businessName || "your business"}?</h1>
         <p> All fields are optional.  If you do not have a given page, feel free to skip it </p>
         <br />
 
