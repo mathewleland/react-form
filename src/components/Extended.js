@@ -2,24 +2,35 @@ import React from 'react';
 import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
 
 class Extended extends React.Component {
-
   constructor() {
     super();
+
+    this.state = {
+      facebook: "",
+      twitter: "",
+      yelp: ""
+    };
     // this.completeStep = this.completeStep.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  completeStep(event) {
-    event.preventDefault();
-
-    const data = {
-      facebook: this.facebook.value,
-      twitter: this.twitter.value,
-      yelp: this.yelp.value,
-
-    }
-
-    this.props.saveValues(data)
-    this.props.nextStep()
+  // completeStep(event) {
+  //   event.preventDefault();
+  //
+  //   const data = {
+  //     facebook: this.facebook.value,
+  //     twitter: this.twitter.value,
+  //     yelp: this.yelp.value,
+  //
+  //   }
+  //
+  //   this.props.saveValues(data)
+  //   this.props.nextStep()
+  // }
+  handleSubmit(e) {
+    e.preventDefault();
+    const extendedDetails = this.state;
+    this.props.processExtended({extendedDetails}); // connected via basics_container (defined in actions)
   }
 
 
