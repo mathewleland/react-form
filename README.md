@@ -1,3 +1,3 @@
-#Onboarding form using react
+#React / Redux Onboarding Form
 
-A form built using react, which takes in user input and stores it in state which is presented at the submission of the form.
+Locable.com multi-page signup form, built with React / Redux. Form collects user input at each step, updating the Redux store. Form will make API requests to both retrieve list of local businesses, and to send user data to the Locable.com API.
