@@ -35,7 +35,7 @@ class Account extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const accountDetails = this.state;
-    this.props.processAccountDetails({accountDetails}); // connected via basics_container (defined in actions)
+    this.props.processAccount({accountDetails}); // connected via basics_container (defined in actions)
   }
 
   render() {
@@ -86,7 +86,7 @@ class Account extends React.Component {
               <ul className='form-fields'>
                 <li className="form-footer">
                   <button className="btn -default " onClick={this.props.prevStep}>Back</button>
-                  <button className="btn -primary pull-right" onClick={this.completeStep}>Next Step</button>
+                  <button className="btn -primary pull-right" onClick={this.handleSubmit}>Next Step</button>
                 </li>
               </ul>
 

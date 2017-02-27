@@ -44,7 +44,7 @@ class Extended extends React.Component {
           <form ref={(input) => this.questions = input}>
 
             <div className="group">
-              <input type="text" ref={(input) => this.facebook = input} defaultValue={ this.props.userData.facebook } required />
+              <input type="text" ref={(input) => this.facebook = input} defaultValue={ this.state.facebook } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label> <i className="fa fa-facebook" aria-hidden="true"></i> Facebook page</label>
@@ -52,7 +52,7 @@ class Extended extends React.Component {
 
             <div className="group">
 
-              <input type="text" ref={(input) => this.twitter = input} defaultValue={ this.props.userData.twitter } required />
+              <input type="text" ref={(input) => this.twitter = input} defaultValue={ this.state.twitter } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label> <i className="fa fa-twitter" aria-hidden="true"></i> Twitter page</label>
@@ -60,14 +60,14 @@ class Extended extends React.Component {
 
             <div className="group">
 
-              <input type="text" ref={(input) => this.yelp = input} defaultValue={ this.props.userData.yelp  } required />
+              <input type="text" ref={(input) => this.yelp = input} defaultValue={ this.state.yelp  } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label> <i className="fa fa-yelp" aria-hidden="true"></i> Yelp page</label>
             </div>
 
             <div className="group">
-              <input type="text" ref={(input) => this.hours = input} defaultValue={ this.props.userData.hours } required />
+              <input type="text" ref={(input) => this.hours = input} defaultValue={ this.state.hours } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>this will be a table of store hours</label>
@@ -77,7 +77,7 @@ class Extended extends React.Component {
               <ul className='form-fields'>
                 <li className="form-footer">
                   <button className="btn -default " onClick={this.props.prevStep}>Back</button>
-                  <button className="btn -primary pull-right" onClick={this.completeStep}>Next Step</button>
+                  <button className="btn -primary pull-right" onClick={this.handleSubmit}>Next Step</button>
                 </li>
               </ul>
 
