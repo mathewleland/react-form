@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { hashHistory } from 'react-router';
+import { browserHistory } from 'react-router';
 import {
   PROCESS_BASICS,
   PROCESS_BUSINFO,
@@ -20,23 +20,23 @@ const SessionReducer = (state = {}, action) => {
 
   switch(action.type) {
     case PROCESS_BASICS:
-      hashHistory.push("/businfo");
+      browserHistory.push("/businfo");
       const basicsDetails = action.basicsDetails;
       return merge({}, state, {basicsDetails});
     case PROCESS_BUSINFO:
       const busInfoDetails = action.busInfoDetails;
-      hashHistory.push("/account");
+      browserHistory.push("/account");
       return merge({}, state, {busInfoDetails});
     case PROCESS_ACCOUNT:
-      hashHistory.push("/extended");
+      browserHistory.push("/extended");
       const accountDetails = action.accountDetails;
       return merge({}, state, {accountDetails});
     case PROCESS_EXTENDED:
-      hashHistory.push("/confirm");
+      browserHistory.push("/confirm");
       const extendedDetails = action.extendedDetails;
       return merge({}, state, {extendedDetails});
     case PROCESS_CONFIRM:
-      hashHistory.push("/success");
+      browserHistory.push("/success");
       const confirmDetails = action.confirmDetails;
       return merge({}, state, {confirmDetails});
     case PROCESS_SUCCESS:

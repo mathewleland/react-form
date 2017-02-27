@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
 import Basics from './components/Basics';
 import BusInfo from './components/BusInfo';
 import Account from './components/Account';

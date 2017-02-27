@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, hashHistory, Link, withRouter } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
 // import { render } from 'react-dom';
 
 class Account extends React.Component {
