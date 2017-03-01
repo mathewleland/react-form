@@ -1,5 +1,7 @@
 import React from 'react';
-import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
+// import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
+
+
 
 class Basics extends React.Component {
 
@@ -7,31 +9,12 @@ class Basics extends React.Component {
     super();
 
     this.state = {
-      name: "",
-      firstName: "",
-      lastName: "",
-      email: "",
-      businessName: ""
-    };
+      businessName: "",
+    }
 
-    // this.completeStep = this.completeStep.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.renderMatches = this.renderMatches.bind(this);
   }
-
-  // completeStep(event) {
-  //   event.preventDefault();
-  //
-  //   const data = {
-  //     name: this.name.value,
-  //     firstName: this.name.value.split(' ')[0],
-  //     lastName: this.name.value.split(' ')[1],
-  //     email: this.email.value,
-  //     businessName: this.businessName.value
-  //   };
-  //
-  //   this.props.saveValues(data);
-  //   this.props.nextStep();
-  // }
 
   handleSubmit(e) {
     e.preventDefault();
@@ -39,42 +22,104 @@ class Basics extends React.Component {
     this.props.processBasics({basicsDetails}); // connected via basics_container (defined in actions)
   }
 
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
+  }
+
+  renderMatches() {
+    let search = this.state.businessName;
+
+    if (search==="pizza") {
+      return (
+        <div>
+          <div className="result search-result">
+            <h4> Paul's Pizza</h4>
+            <p>Address: 123 Fake St</p>
+            <p>Folsom, CA</p>
+            <div className="result-button" onClick={this.handleSubmit}> This is it </div>
+          </div>
+
+          <div className="result search-result">
+            <h4> Ray's Pizza</h4>
+            <p>Address: 22 Fake St</p>
+            <p>Sacramento, CA</p>
+            <div className="result-button" onClick={this.handleSubmit}> This is it </div>
+          </div>
+        </div>
+
+      )
+    }
+    if (search==="laundry") {
+      return (
+        <div className="result search-result">
+          <h4> Larry's laundry</h4>
+          <p>Address: 123 Fake Ave</p>
+          <p>Folsom, CA</p>
+          <div className="result-button" onClick={this.handleSubmit}> This is it </div>
+        </div>
+      )
+    }
+    else {
+      return (
+        <div className="result no-result">
+          <h4> Can't find your business?</h4>
+          <br />
+          <br />
+          <div className="result-button" onClick={this.handleSubmit}> Add it manually </div>
+        </div>
+      )
+    }
+  }
+
+
+
   render() {
+
     return (
       <div className='container'>
-        <h1> Basic Questions </h1>
+        <h1> What is the name of your business? </h1>
 
-        <form ref={(input) => this.questions = input}>
-
-          <div className="group">
-            <input type="text" ref={(input) => this.name = input} defaultValue={ this.state.name } required />
-            <span className="highlight"></span>
-            <span className="bar"></span>
-            <label>First and Last Name</label>
-          </div>
+        <form className='lookup-form'>
 
           <div className="group">
-            <input type="text" ref={(input) => this.email = input} defaultValue={ this.state.email } required />
-            <span className="highlight"></span>
-            <span className="bar"></span>
-            <label>Email</label>
-          </div>
-
-          <div className="group">
-            <input type="text" ref={(input) => this.businessName = input} defaultValue={ this.state.businessName } required />
+            <input
+              type="text"
+              value={this.state.businessName}
+              onChange={this.update("businessName")}
+                />
             <span className="highlight"></span>
             <span className="bar"></span>
             <label>Business Name</label>
           </div>
 
-          <button onClick={ this.handleSubmit } className='btn -primary pull-right'> Next Step </button>
+
+
 
         </form>
 
-
+        {this.renderMatches()}
       </div>
     );
   }
 }
 
 export default Basics;
+
+//<button onClick={ this.renderMatches } className='btn -primary pull-right'> Look up </button>
+// this.completeStep = this.completeStep.bind(this);
+// completeStep(event) {
+//   event.preventDefault();
+//
+//   const data = {
+//     name: this.name.value,
+//     firstName: this.name.value.split(' ')[0],
+//     lastName: this.name.value.split(' ')[1],
+//     email: this.email.value,
+//     businessName: this.businessName.value
+//   };
+//
+//   this.props.saveValues(data);
+//   this.props.nextStep();
+// }

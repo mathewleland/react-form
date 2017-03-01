@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
+import { Link } from 'react-router';
 
 class Extended extends React.Component {
   constructor() {
@@ -10,23 +10,11 @@ class Extended extends React.Component {
       twitter: "",
       yelp: ""
     };
-    // this.completeStep = this.completeStep.bind(this);
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // completeStep(event) {
-  //   event.preventDefault();
-  //
-  //   const data = {
-  //     facebook: this.facebook.value,
-  //     twitter: this.twitter.value,
-  //     yelp: this.yelp.value,
-  //
-  //   }
-  //
-  //   this.props.saveValues(data)
-  //   this.props.nextStep()
-  // }
+
   handleSubmit(e) {
     e.preventDefault();
     const extendedDetails = this.state;
@@ -76,7 +64,7 @@ class Extended extends React.Component {
 
               <ul className='form-fields'>
                 <li className="form-footer">
-                  <button className="btn -default " onClick={this.props.prevStep}>Back</button>
+                  <Link className="btn -default" to="/account">Back</Link>
                   <button className="btn -primary pull-right" onClick={this.handleSubmit}>Next Step</button>
                 </li>
               </ul>
@@ -92,3 +80,18 @@ class Extended extends React.Component {
 }
 
 export default Extended;
+
+// this.completeStep = this.completeStep.bind(this);
+// completeStep(event) {
+//   event.preventDefault();
+//
+//   const data = {
+//     facebook: this.facebook.value,
+//     twitter: this.twitter.value,
+//     yelp: this.yelp.value,
+//
+//   }
+//
+//   this.props.saveValues(data)
+//   this.props.nextStep()
+// }

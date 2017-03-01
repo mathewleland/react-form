@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
-import Basics from './components/Basics';
-import BusInfo from './components/BusInfo';
-import Account from './components/Account';
-import Extended from './components/Extended';
-import Confirm from './components/Confirm';
-import Success from './components/Success';
+// import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
+// import Basics from './components/Basics';
+// import BusInfo from './components/BusInfo';
+// import Account from './components/Account';
+// import Extended from './components/Extended';
+// import Confirm from './components/Confirm';
+// import Success from './components/Success';
 
 // NOTE: DEFINED THIS INDIVIDUALLY IN EACH COMPONENTS STATE, THEN PASSED TO THE REDUX STOREA
 // let userData = {
@@ -30,9 +30,8 @@ import Success from './components/Success';
 
 class App extends React.Component {
 
-  constructor() {
-    super();
 
+    //constructor 
     // this.saveValues = this.saveValues.bind(this);
     // this.nextStep = this.nextStep.bind(this);
     // this.prevStep = this.prevStep.bind(this);
@@ -42,7 +41,6 @@ class App extends React.Component {
     //   step: 1
     // };
 
-  }
 
   // getinitialState() {
   //   return {

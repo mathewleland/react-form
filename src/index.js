@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import configureStore from './store/store';
 import Root from './components/root';
 
-import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
-import App from './App';
+// import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
+// import App from './App';
 import './index.css';
-import { render } from 'react-dom';
+// import { render } from 'react-dom';
 
 document.addEventListener('DOMContentLoaded', () => {
   let store;

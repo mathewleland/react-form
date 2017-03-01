@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import { processSuccess } from '../actions/session_actions';
-import Success from './Success';
+import { processPlan } from '../actions/session_actions';
+import SelectPlan from './SelectPlan';
 
 const mapStateToProps = ({session}) => {
   return {
@@ -10,11 +10,11 @@ const mapStateToProps = ({session}) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    processSuccess: confirmDetails => dispatch(processSuccess(confirmDetails))
+    processPlan: planDetails => dispatch(processPlan(planDetails))
   };
 };
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Success);
+)(SelectPlan);

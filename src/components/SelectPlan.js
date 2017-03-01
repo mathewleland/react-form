@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+// import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class SelectPlan extends React.Component {
@@ -8,13 +9,13 @@ class SelectPlan extends React.Component {
     return (
       <div className="plans">
 
-        <div id='engage'>
+        <div id='engage' className='plan'>
           <h2> Engage </h2>
           <p> Local Marketing Assistant provides recommendations and reminders while built in tools make marketing fast, easy and even fun</p>
 
           <h1> Free - Seriously! </h1>
 
-          <button> Engage Plan </button>
+          <a href="/basics"><button> Engage Plan </button></a>
 
           <h4> Includes </h4>
           <ul>
@@ -32,14 +33,14 @@ class SelectPlan extends React.Component {
         </div>
 
 
-        <div id='build'>
+        <div id='build' className='plan'>
           <h2> Build </h2>
           <p>  Build your business with expnanded local marketing tools and a price you can afford</p>
 
           <h1> $24.99 / month </h1>
-          <small> Paid Annually </small>
+          <small> Paid Annually </small> <br />
 
-          <button> Build Plan </button>
+          <a href="/basics"><button> Build Plan </button></a>
 
           <h4> Includes </h4>
           <ul>
@@ -48,9 +49,9 @@ class SelectPlan extends React.Component {
             <small>Unlimited Monthly Requests</small>
             <hr/>
             <li>Expanded Content Engine</li>
-            <small>Adds &#34 Before & After &#34 Posts and Gallery</small>
+            <small>Adds 'Before & After' Posts and Gallery</small>
             <li>Expanded Contacts Database</li>
-            <small>Organize unlimited companies and up to 500 people with lists & segments and assignable to-do &#39 s with reminders</small>
+            <small>Organize unlimited companies and up to 500 people with lists & segments and assignable to-do's with reminders</small>
             <hr/>
           </ul>
         </div>

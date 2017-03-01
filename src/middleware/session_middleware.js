@@ -1,5 +1,5 @@
 import { signup } from '../util/session_api_util';
-import { browserHistory } from 'react-router';
+// import { browserHistory } from 'react-router';
 import { receiveCurrentUser,
          receiveErrors,
          SIGNUP

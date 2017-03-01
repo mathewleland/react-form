@@ -1,10 +1,13 @@
 import React from 'react';
-import { Router, Route, IndexRoute, browserHistory, Link, withRouter } from 'react-router';
+import { Link, browserHistory } from 'react-router';
+import configureStore from '../store/store'
 
 class Confirm extends React.Component {
 
   constructor() {
     super();
+
+    this.submitInfo = this.submitInfo.bind(this);
 
     // LATER, COLLECT THESE ALL FROM STORE, OR FIND BETTER WAY
     this.state = {
@@ -26,34 +29,49 @@ class Confirm extends React.Component {
     };
   }
 
-  // <ul>
-  //   <li><b>First Name:</b> {this.props.userData.firstName}</li>
-  //   <li><b>Last Name:</b> {this.props.userData.lastName}</li>
-  //   <li><b>Email:</b> {this.props.userData.email}</li>
-  //   <li><b>Business Name:</b> {this.props.userData.businessName}</li>
-  //   <li><b>Phone Number:</b> {this.props.userData.phone}</li>
-  //   <li><b>Street Address:</b> {this.props.userData.streetAddress}</li>
-  //   <li><b>City:</b> {this.props.userData.city}</li>
-  //   <li><b>State:</b> {this.props.userData.usState}</li>
-  //   <li><b>zip:</b> {this.props.userData.zip}</li>
-  //   <li><b>website:</b> {this.props.userData.website}</li>
-  //   <li><b>industry:</b> {this.props.userData.industry}</li>
-  //   <li><b>Facebook link:</b> {this.props.userData.facebook}</li>
-  //   <li><b>Twitter link:</b> {this.props.userData.twitter}</li>
-  //   <li><b>Yelp link:</b> {this.props.userData.yelp}</li>
-  //   <li><b>Store Hours:</b> {this.props.userData.hours}</li>
-  // </ul>
+
+
+  submitInfo() {
+    alert("submission of user data");
+    browserHistory.push('/success');
+  }
 
   render() {
+
+
+    console.log(this.props.session);
+    let session = this.props.session;
+
     return (
+
+
       <div className='container'>
         <h2>Confirm your information</h2>
 
 
+          <ul>
+            <li><b>Business:</b> {session.busInfoDetails.busInfoData.businessName}</li>
+            <li><b>First Name:</b> {session.accountDetails.accountDetails.firstName}</li>
+            <li><b>Last Name:</b> {session.accountDetails.accountDetails.lastName}</li>
+            <li><b>Email:</b> {session.accountDetails.accountDetails.email}</li>
+            <li><b>Phone Number:</b> {session.busInfoDetails.busInfoData.phone}</li>
+            <li><b>Street Address:</b> {session.busInfoDetails.busInfoData.streetAddress}</li>
+            <li><b>City:</b> {session.busInfoDetails.busInfoData.city}</li>
+            <li><b>State:</b> {session.busInfoDetails.busInfoData.usState}</li>
+            <li><b>zip:</b> {session.busInfoDetails.busInfoData.zip}</li>
+            <li><b>website:</b> {session.busInfoDetails.busInfoData.website}</li>
+            <li><b>Facebook link:</b> {session.extendedDetails.extendedDetails.facebook}</li>
+            <li><b>Twitter link:</b> {session.extendedDetails.extendedDetails.twitter}</li>
+            <li><b>Yelp link:</b> {session.extendedDetails.extendedDetails.yelp}</li>
+
+
+          </ul>
+
+
         <ul className='form-fields'>
           <li className="form-footer">
-            <Link className="btn -default" to="/">Back</Link>
-            <button className="btn -primary pull-right" onClick={this.props.signup}>Submit Registration</button>
+            <Link className="btn -default" to="/extended">Back</Link>
+            <button className="btn -primary pull-right" onClick={this.submitInfo}>Submit Registration</button>
           </li>
         </ul>
       </div>

@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup, processBusInfo } from '../actions/session_actions';
+import { processBusInfo } from '../actions/session_actions';
 import BusInfo from './BusInfo';
 
 const mapStateToProps = ({session}) => {
