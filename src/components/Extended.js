@@ -1,4 +1,5 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 class Extended extends React.Component {
 
@@ -18,7 +19,8 @@ class Extended extends React.Component {
     }
 
     this.props.saveValues(data)
-    this.props.nextStep()
+    browserHistory.push("/confirm")
+    // this.props.nextStep()
   }
 
 
@@ -64,7 +66,7 @@ class Extended extends React.Component {
 
               <ul className='form-fields'>
                 <li className="form-footer">
-                  <button className="btn -default " onClick={this.props.prevStep}>Back</button>
+                  <button className="btn -default">Back</button>
                   <button className="btn -primary pull-right" onClick={this.completeStep}>Next Step</button>
                 </li>
               </ul>

@@ -1,5 +1,5 @@
 import React from 'react';
-// import { render } from 'react-dom';
+import { browserHistory } from 'react-router';
 
 class Account extends React.Component {
 
@@ -11,16 +11,11 @@ class Account extends React.Component {
   completeStep(event) {
     event.preventDefault();
 
-    const data = {
-      firstName: this.firstName.value,
-      lastName: this.lastName.value,
-      email: this.email.value,
-      password: this.password.value
-
-    }
-
-    this.props.saveValues(data)
-    this.props.nextStep()
+    localStorage.setItem('firstName', this.firstName.value);
+    localStorage.setItem('lastName', this.lastName.value);
+    localStorage.setItem('email', this.email.value)
+    localStorage.setItem('password', this.password.value);
+    browserHistory.push("/confirm")
   }
 
 
@@ -34,44 +29,35 @@ class Account extends React.Component {
           <form ref={(input) => this.questions = input}>
 
             <div className="group">
-              <input type="text" ref={(input) => this.firstName = input} defaultValue={ this.props.userData.firstName } required />
+              <input type="text" ref={(input) => this.firstName = input} defaultValue={ localStorage.firstName } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>First Name</label>
             </div>
 
             <div className="group">
-              <input type="text" ref={(input) => this.lastName = input} defaultValue={ this.props.userData.lastName } required />
+              <input type="text" ref={(input) => this.lastName = input} defaultValue={ localStorage.lastName } required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Last Name</label>
             </div>
 
             <div className="group">
-              <input type="text" ref={(input) => this.email = input} defaultValue={ this.props.userData.email }  required />
+              <input type="email" ref={(input) => this.email = input} defaultValue={ localStorage.email }  required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Email</label>
             </div>
 
             <div className="group">
-              <input type="password" ref={(input) => this.password = input} defaultValue={ this.props.userData.password }  required />
+              <input type="password" ref={(input) => this.password = input} defaultValue={ localStorage.password }  required />
               <span className="highlight"></span>
               <span className="bar"></span>
               <label>Password, min 8 characters</label>
             </div>
 
-            <div className="group">
-              <input type="password" ref={(input) => this.password2 = input} defaultValue={ this.props.userData.password2 }  required />
-              <span className="highlight"></span>
-              <span className="bar"></span>
-              <label>Retype password</label>
-            </div>
-
-
               <ul className='form-fields'>
                 <li className="form-footer">
-                  <button className="btn -default " onClick={this.props.prevStep}>Back</button>
                   <button className="btn -primary pull-right" onClick={this.completeStep}>Next Step</button>
                 </li>
               </ul>

@@ -1,35 +1,72 @@
 import React from 'react';
+import { browserHistory } from 'react-router';
 
 class Confirm extends React.Component {
+
+  completeStep() {
+    localStorage.setItem('confirmed', true)
+    browserHistory.push('/success')
+  }
   render() {
     return (
       <div className='container'>
         <h2>Confirm your information</h2>
-        <ul>
-          <li><b>First Name:</b> {this.props.userData.firstName}</li>
-          <li><b>Last Name:</b> {this.props.userData.lastName}</li>
-          <li><b>Email:</b> {this.props.userData.email}</li>
-          <li><b>Business Name:</b> {this.props.userData.businessName}</li>
-          <li><b>Phone Number:</b> {this.props.userData.phone}</li>
-          <li><b>Street Address:</b> {this.props.userData.streetAddress}</li>
-          <li><b>City:</b> {this.props.userData.city}</li>
-          <li><b>State:</b> {this.props.userData.usState}</li>
-          <li><b>zip:</b> {this.props.userData.zip}</li>
-          <li><b>website:</b> {this.props.userData.website}</li>
-          <li><b>industry:</b> {this.props.userData.industry}</li>
-          <li><b>Facebook link:</b> {this.props.userData.facebook}</li>
-          <li><b>Twitter link:</b> {this.props.userData.twitter}</li>
-          <li><b>Yelp link:</b> {this.props.userData.yelp}</li>
-          <li><b>Store Hours:</b> {this.props.userData.hours}</li>
+            <table>
+              <tr>
+                <td>First name</td>
+                <td>{localStorage.firstName}</td>
+              </tr>
+              <tr>
+                <td>Last Name</td>
+                <td>{localStorage.lastName}</td>
+              </tr>
+              <tr>
+                <td>Email</td>
+                <td>{localStorage.email}</td>
+              </tr>
+              <tr>
+                <td>Business / Org name</td>
+                <td>{localStorage.businessName}</td>
+              </tr>
+              <tr>
+                <td>Phone number</td>
+                <td>{localStorage.phone}</td>
+              </tr>
+              <tr>
+                <td>Street Address</td>
+                <td>{localStorage.streetAddress}</td>
+              </tr>
+              <tr>
+                <td>City</td>
+                <td>{localStorage.city}</td>
+              </tr>
+              <tr>
+                <td>State</td>
+                <td>{localStorage.usState}</td>
+              </tr>
+              <tr>
+                <td>ZIP</td>
+                <td>{localStorage.zip}</td>
+              </tr>
+              <tr>
+                <td>Website </td>
+                <td>{localStorage.website || "none yet"}</td>
+              </tr>
+              <tr>
+                <td>Industry</td>
+                <td>{localStorage.industry}</td>
+              </tr>
+              <tr>
+                <td>Plan</td>
+                <td>{localStorage.plan}</td>
+              </tr>
+            </table>
 
-
-
-        </ul>
 
         <ul className='form-fields'>
           <li className="form-footer">
-            <button className="btn -default pull-left" onClick={this.props.prevStep}>Back</button>
-            <button className="btn -primary pull-right" onClick={this.props.submitRegistration}>Submit</button>
+            <button className="btn -primary pull-right" onClick={this.completeStep}>Submit</button>
+            <button className="btn -reset -default pull-right" onClick={this.props.startOver}>Reset and start over </button>
           </li>
         </ul>
       </div>
