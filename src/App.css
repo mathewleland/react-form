@@ -147,6 +147,15 @@ li {
   text-align: left;
 }
 
+@media (max-width: 740px) {
+  .plan {
+    max-width: 80%;
+    margin: 0 auto 30px;
+    display: block;
+    float: none;
+  }
+}
+
 
 /* form starting stylings ------------------------------- */
 .group 			  {
