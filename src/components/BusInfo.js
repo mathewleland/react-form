@@ -12,6 +12,9 @@ class BusInfo extends React.Component {
 
   completeStep(event) {
     event.preventDefault();
+    if (localStorage.plan !== "build") {
+      localStorage.setItem('plan', 'engage')
+    }
     localStorage.setItem('businessName', this.businessName.value)
     localStorage.setItem('phone', this.phone.value)
     localStorage.setItem('streetAddress', this.streetAddress.value)
